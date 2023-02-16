@@ -4,3 +4,4 @@
 2. Generate assembly code from c; gcc -S file.c
 3. Compile and create an executable
 4. Using puts function
+5. Using printf to print a string
