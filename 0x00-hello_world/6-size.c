@@ -2,6 +2,7 @@
 
 /**
 * main - A program to show sizes of varius data types
+* using sizeof() funtion
 * Return: 0 (Success)
 */
 int main(void)
