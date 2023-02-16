@@ -1,10 +1,22 @@
 #include <stdio.h>
+
 /**
- * main - print a string without using puts or printf
- * Return: 1 (Success)
+ * main - Entry point
+ * Description: This function uses inline assembly to print a string to the console using the syscall function in x86_64 architecture.
+ * Return: Always 1 (Success)
  */
-int main()
+int main(void)
 {
-	const char str[] = "(and that piece of art is useful\" - Dora Korpar, 2015-10-19)\n";
-	fputs(str, stdout);
-	return (1);
+        char *s = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
+        long l = 59;
+        long fd = 1;
+        long syscall = 1;
+        long ret = 0;
+        __asm__ ("syscall"
+                : "=a" (ret)
+                : "a" (syscall),
+                  "D" (fd),
+                  "S" (s),
+                  "d" (l));
+        return (1);
+}
