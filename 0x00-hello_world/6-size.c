@@ -1,8 +1,7 @@
 #include <stdio.h>
-
 /**
 * main - A program to show sizes of varius data types
-* using sizeof() funtion
+* using sizeof() funtioNn
 * Return: 0 (Success)
 */
 int main(void)
