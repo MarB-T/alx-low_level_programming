@@ -1,4 +1,6 @@
 #include<stdio.h>
+/* main */
+
 int main(void)
 {
 /*Prints a statement*/
