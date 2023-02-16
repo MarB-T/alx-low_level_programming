@@ -1,6 +1,7 @@
 #include<stdio.h>
 int main()
 {
-  puts('\"Programming is like building a multilingual puzzle')
+	char Mystr[] = '"Programming is like building a multilingual puzzle'
+  puts(Mysrt)
 
     }
