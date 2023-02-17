@@ -13,7 +13,10 @@ int main(void)
 	{
 		char b = a;
 
-		if ((b != 'e') || (b != 'q'))
+		if ((b == 'e') || (b == 'q'))
+		{
+		}
+		else
 		{
 			putchar(b);
 		}
