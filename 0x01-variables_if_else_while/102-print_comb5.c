@@ -18,7 +18,11 @@ int main(void)
 		{
 			for (z = 0; z <= 9; z++)
 			{
-				for (w = (y + 1); w <= 9; w++)
+				if (y > 1)
+				{
+					w = y + 1;
+				}
+				for (w = 0; w <= 9; w++)
 				{
 					if ((x == z) && (y == w))
 					{
