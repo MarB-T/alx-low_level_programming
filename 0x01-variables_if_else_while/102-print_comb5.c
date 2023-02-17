@@ -7,7 +7,7 @@
 
 int main(void)
 {
-	int w = 0;
+	int w;
 	int x = 0;
 	int y = 0;
 	int z = 0;
@@ -18,7 +18,7 @@ int main(void)
 		{
 			for (z = 0; z <= 9; z++)
 			{
-				for (w = 0; w <= 9; w++)
+				for (w = (y + 1); w <= 9; w++)
 				{
 					if (((x == z) && (y == w)) || ((z == 0) && (w == 0)))
 					{
@@ -31,9 +31,9 @@ int main(void)
 						putchar(z + '0');
 						putchar(w + '0');
 						if ((x == 9) && (y == 8) && (z == 9) && (w == 9))
-							{
-								break;
-							}
+						{
+							break;
+						}
 						putchar(',');
 						putchar(' ');
 					}
