@@ -9,13 +9,16 @@ int main(void)
 {
 	int i = 0;
 
-	for (i = 0; i < 10; i++)
-	{
+	do {
 		putchar(i + '0');
-		i++;
+		if (i == 9)
+		{
+			break;
+		}
 		putchar(',');
 		putchar(' ');
-	}
+		i++;
+	} while (i < 10);
 	putchar('\n');
 	return (0);
 }
