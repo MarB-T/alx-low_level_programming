@@ -18,7 +18,7 @@ int main(void)
 		{
 			for (z = 0; z <= 9; z++)
 			{
-				for (w = (y + 1); w <= 9; w++)
+				for (w = 0; w <= 9; w++)
 				{
 					if (((x == z) && (y == w)) || ((z == 0) && (w == 0)))
 					{
@@ -38,6 +38,7 @@ int main(void)
 						putchar(' ');
 					}
 				}
+				w = y + 1;
 			}
 		}
 	}
