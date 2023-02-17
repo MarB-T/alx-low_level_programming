@@ -12,7 +12,8 @@ int main(void)
 	for (a = 97; a <= 100; a++)
 	{
 		char b = a;
-		if ((a != 100) && (a != 113))
+		
+		if ((b != 'e') && (b != 'q'))
 		{
 			putchar(b);
 		}
