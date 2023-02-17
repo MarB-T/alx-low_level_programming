@@ -12,8 +12,8 @@ int main(void)
 	for (a = 97; a <= 100; a++)
 	{
 		char b = a;
-		
-		if ((b != 'e') && (b != 'q'))
+
+		if ((b != 'e') || (b != 'q'))
 		{
 			putchar(b);
 		}
