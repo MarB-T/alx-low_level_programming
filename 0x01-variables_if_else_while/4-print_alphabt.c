@@ -11,10 +11,9 @@ int main(void)
 
 	for (a = 97; a <= 100; a++)
 	{
+		char b = a;
 		if ((a != 100) && (a != 113))
 		{
-			char b = a;
-
 			putchar(b);
 		}
 	}
