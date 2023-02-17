@@ -16,7 +16,7 @@ int main(void)
 
 		putchar(b);
 	}
-	for (x = 65; x <= 90; a++)
+	for (x = 65; x <= 90; x++)
 	{
 		char b = x;
 
