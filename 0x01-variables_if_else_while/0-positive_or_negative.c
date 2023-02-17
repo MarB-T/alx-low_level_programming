@@ -2,10 +2,10 @@
 #include <stdio.h>
 #include <time.h>
 /**
- *  more headers goes there 
- *  main - Tell if number is positive or neagtive
- *  return 0 (Success)
- *  betty style doc for function main goes there */
+ *  main - Tell if number is positive or neagtive.
+ *  Return: 0 (Success)
+ *  Description: Tells positives and negatives.
+ */
 int main(void)
 {
 	int n;
