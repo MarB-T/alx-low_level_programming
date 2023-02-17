@@ -37,8 +37,8 @@ int main(void)
 						putchar(',');
 						putchar(' ');
 					}
+					w++;
 				}
-				w = y + 1;
 			}
 		}
 	}
