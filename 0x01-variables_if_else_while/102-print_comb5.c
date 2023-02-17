@@ -20,7 +20,7 @@ int main(void)
 			{
 				for (w = 0; w <= 9; w++)
 				{
-					if (y > w)
+					if ((y > w) || (z == w))
 					{
 					}
 					else
