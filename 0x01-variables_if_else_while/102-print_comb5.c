@@ -19,7 +19,7 @@ int main(void)
 		{
 			if (y > 1)
 			{
-				dw = w + 1;
+				dw = y + 1;
 			}
 			for (z = 0; z <= 9; z++)
 			{
