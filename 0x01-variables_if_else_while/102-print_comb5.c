@@ -11,21 +11,19 @@ int main(void)
 	int x = 0;
 	int y = 0;
 	int z = 0;
-	int dw = 0;
 
 	for (x = 0; x <= 9; x++)
 	{
 		for (y = 0; y <= 9; y++)
 		{
-			if (y > 1)
-			{
-				dw = y + 1;
-			}
 			for (z = 0; z <= 9; z++)
 			{
-				for (w = dw; w <= 9; w++)
+				for (w = 0; w <= 9; w++)
 				{
 					if (((x == z) && (y == w)) || ((z == 0) && (w == 0)))
+					{
+					}
+					else if (!((y > 1) && (x == 0)))
 					{
 					}
 					else
