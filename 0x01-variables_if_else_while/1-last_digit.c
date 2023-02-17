@@ -5,7 +5,7 @@
 /* more headers goes there */
 /**
  * main - Finds the last digit of a number
- * Return 0 (Success)
+ * Return: 0 (Success)
  */
 
 /* betty style doc for function main goes there */
