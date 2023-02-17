@@ -42,7 +42,7 @@ int main(void)
 						putchar(' ');
 					}
 				}
-				w = y + 1;
+				/* w = y + 1;*/
 			}
 		}
 	}
