@@ -18,10 +18,6 @@ int main(void)
 		{
 			for (z = 0; z <= 9; z++)
 			{
-				/*if (y > 1)
-				{
-					w = y + 1;
-				}*/
 				for (w = 0; w <= 9; w++)
 				{
 					if (((x == z) && (y == w)) || ((z == 0) && (w == 0)) ||((x + y) > (w + z)))
@@ -42,7 +38,6 @@ int main(void)
 						putchar(' ');
 					}
 				}
-				/* w = y + 1;*/
 			}
 		}
 	}
