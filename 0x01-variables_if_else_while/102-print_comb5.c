@@ -20,7 +20,7 @@ int main(void)
 			{
 				for (w = (y + 1); w <= 9; w++)
 				{
-					if (((x == z) && (y == w)) || ((z == 0) && (w == 0)))
+					if ((x == z) && (y == w))
 					{
 					}
 					else
