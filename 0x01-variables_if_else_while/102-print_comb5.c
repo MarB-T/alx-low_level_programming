@@ -30,12 +30,10 @@ int main(void)
 						putchar(' ');
 						putchar(z + '0');
 						putchar(w + '0');
-							/*
-							 * if ((x == 7) && (y == 8) && (z == 9))
-							 * {
-							 *	break;
-							 * }
-							*/
+							if ((x == 9) && (y == 8) && (z == 9) && (w == 9))
+							{
+								break;
+							}
 						putchar(',');
 						putchar(' ');
 					}
