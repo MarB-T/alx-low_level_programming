@@ -7,7 +7,7 @@
 
 int main(void)
 {
-	int w = 1;
+	int w = 0;
 	int x = 0;
 	int y = 0;
 	int z = 0;
@@ -18,7 +18,7 @@ int main(void)
 		{
 			for (z = 0; z <= 9; z++)
 			{
-				for (w = 1; w <= 9; w++)
+				for (w = 0; w <= 9; w++)
 				{
 					if (y > w)
 					{
