@@ -1,49 +1,32 @@
 #include <stdio.h>
 
 /**
- * main - Print all two non-similar digit combinations in order.
- * Return: 0 (Success)
+ * main - Program entry point
+ * Return: 0 on success, Error code otherwise
  */
-
 int main(void)
 {
-	int w;
-	int x = 0;
-	int y = 0;
-	int z = 0;
+	int i, j;
 
-	for (x = 0; x <= 9; x++)
-	{
-		for (y = 0; y <= 9; y++)
+		for (i = 0; i < 100; i++)
 		{
-			for (z = 0; z <= 9; z++)
+			for (j = 0; j < 100; j++)
 			{
-				for (w = 0; w <= 9; w++)
+				if (i < j)
 				{
-					if (((x == z) && (y == w)) || ((z == 0) && (w == 0)))
+					putchar((i / 10) + 48);
+					putchar((i % 10) + 48);
+					putchar(' ');
+					putchar((j / 10) + 48);
+					putchar((j % 10) + 48);
+					if (i != 98 || j != 99)
 					{
-					}
-					else if (!((y > 1) && (x == 0)))
-					{
-					}
-					else
-					{
-						putchar(x + '0');
-						putchar(y + '0');
-						putchar(' ');
-						putchar(z + '0');
-						putchar(w + '0');
-						if ((x == 9) && (y == 8) && (z == 9) && (w == 9))
-						{
-							break;
-						}
 						putchar(',');
 						putchar(' ');
 					}
 				}
 			}
 		}
-	}
-	putchar('\n');
-	return (0);
+		putchar ('\n');
+		return (0);
 }
