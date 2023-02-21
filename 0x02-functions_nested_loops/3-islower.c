@@ -15,11 +15,3 @@ int _islower(int c)
 		return (0);
 	}
 }
-
-int main(void)
-{
-	int i = _islower('j');
-	putchar(i + '0');
-	printf("\n");
-	return (0);
-}
