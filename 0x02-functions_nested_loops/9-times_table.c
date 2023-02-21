@@ -5,7 +5,7 @@
  * Return: 0 -Success
  */
 
-int main(void)
+void times_table(void)
 {
 	int i = 0;
 	int j = 0;
@@ -16,8 +16,15 @@ int main(void)
 		for (j = 0; j <= 9; j++)
 		{
 			m = i * j;
-			putchar((m / 10) + '0');
-			putchar((m % 10) + '0');
+			if (m < 10)
+			{
+				putchar(m + '0');
+			}
+			else
+			{
+				putchar((m / 10) + '0');
+				putchar((m % 10) + '0');
+			}
 			putchar('\t');
 		}
 		putchar('\n');
