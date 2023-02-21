@@ -14,7 +14,7 @@ int main(void)
 	putchar('c');
 	putchar('h');
 	putchar('a');
-	putchar('h');
+	putchar('r');
 	putchar('\n');
 	return (0);
 }
