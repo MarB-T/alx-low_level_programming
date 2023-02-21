@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
  * times_table - Function to print times table
@@ -20,24 +20,24 @@ void times_table(void)
 			{
 				if (j == 0)
 				{
-					putchar(m + '0');
+					_putchar(m + '0');
 				}
 				else
 				{
-					putchar(',');
-					putchar(' ');
-					putchar(' ');
-					putchar(m + '0');
+					_putchar(',');
+					_putchar(' ');
+					_putchar(' ');
+					_putchar(m + '0');
 				}
 			}
 			else
 			{
-				putchar(',');
-				putchar(' ');
-				putchar((m / 10) + '0');
-				putchar((m % 10) + '0');
+				_putchar(',');
+				_putchar(' ');
+				_putchar((m / 10) + '0');
+				_putchar((m % 10) + '0');
 			}
 		}
-		putchar('\n');
+		_putchar('\n');
 	}
 }
