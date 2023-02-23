@@ -8,9 +8,9 @@
  * Return: largest number
  */
 
-unsigned int largest_number(unsigned int a, unsigned int b, unsigned int c)
+float largest_number(float a, float b, float c)
 {
-	unsigned int largest = a;
+	float largest = a;
 
 	if (b >= a)
 	{
