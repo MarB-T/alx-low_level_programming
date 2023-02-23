@@ -14,9 +14,9 @@ int largest_number(int a, int b, int c)
 	int y;
 	int z;
 
-	x = (int) a;
-	y = (int) b;
-	z = (int) c;
+	x = (int)a;
+	y = (int)b;
+	z = (int)c;
 
 	int largest = a;
 
