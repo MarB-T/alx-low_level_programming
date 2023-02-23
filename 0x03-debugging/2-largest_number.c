@@ -8,9 +8,9 @@
  * Return: largest number
  */
 
-float largest_number(float a, float b, float c)
+int largest_number(int a, int b, int c)
 {
-	float largest = a;
+	int largest = a;
 
 	if (b >= a)
 	{
