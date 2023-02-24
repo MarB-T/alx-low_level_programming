@@ -2,27 +2,37 @@
 #include "main.h"
 
 /**
- * more_numbers - Prints numbers to 14 using _putchar
- * Return: 0 Success
+ * more_numbers - function declaration
+ * Description: print 1-14, 10 times
+ * Return: void
  */
 
-int main(void)
-{
-	int i;
-	int j;
-	int x;
+void more_numbers(void);
 
-	for (i = 0; i < 10; i++)
+/**
+ * more_numbers - function definition
+ * Description: prints 1-14, ten times
+ * Return: void
+ */
+
+void more_numbers(void)
+{
+	int counter;
+	int number;
+
+	for (counter = 0; counter <= 9; counter++)
 	{
-		for (j = 48; j <= 57; j++)
+		for (number = 0; number <= 14; number++)
 		{
-			putchar(j);
+			if (number > 9)
+			{
+				_putchar(number / 10 + '0');
+			}
+			_putchar(number % 10 + '0');
 		}
-		for (x = 10; x <= 14; x++)
-		{
-			putchar(x + '0');
-		}
-		putchar('\n');
+		_putchar('\n');
+	}
+};
 	}
 	return (0);
 }
