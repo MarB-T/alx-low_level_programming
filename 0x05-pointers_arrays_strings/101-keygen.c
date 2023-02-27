@@ -15,7 +15,7 @@ void randomPassword(int n)
 	char letter[] = "abcdefghijklmnoqprstuvwyzx";
 	char LETTER[] = "ABCDEFGHIJKLMNOQPRSTUYWVZX";
 	char symbols[] = "!@#$^&*?";
-	char password[10];
+	char password[15];
 
 	srand((unsigned int)(time(NULL)));
 
@@ -48,7 +48,7 @@ void randomPassword(int n)
 
 int main()
 {
-	int n = 10;
+	int n = 15;
 
 	randomPassword(n);
 
