@@ -22,10 +22,6 @@ void puts2(char *str)
 		{
 			_putchar(*(str + m));
 		}
-		else
-		{
-			contineu;
-		}
 	}
 	_putchar('\n');
 }
