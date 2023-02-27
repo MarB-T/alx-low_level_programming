@@ -48,7 +48,7 @@ void randomPassword(int n)
 
 int main()
 {
-	int n;
+	int n = 10;
 
 	randomPassword(n);
 
