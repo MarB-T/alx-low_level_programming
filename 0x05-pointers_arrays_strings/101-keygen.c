@@ -15,13 +15,12 @@ void randomPassword(int n)
 	char letter[] = "abcdefghijklmnoqprstuvwyzx";
 	char LETTER[] = "ABCDEFGHIJKLMNOQPRSTUYWVZX";
 	char symbols[] = "!@#$^&*?";
-	char password[n];
+	char password[8];
 
 	srand((unsigned int)(time(NULL)));
 
 	randomizer = rand() % 4;
 
-	// Iterate over the range [0, N]
 	for (i = 0; i < n; i++) {
 
 		if (randomizer == 1) {
@@ -47,14 +46,10 @@ void randomPassword(int n)
 	}
 }
 
-// Driver Code
 int main()
 {
-	// Length of the password to
-	// be generated
-	int n = 10;
+	int n = 8;
 
-	// Function Call
 	randomPassword(n);
 
 	return 0;
