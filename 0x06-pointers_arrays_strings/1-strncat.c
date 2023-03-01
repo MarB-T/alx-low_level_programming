@@ -11,6 +11,7 @@
 char *_strcat(char *dest, char *src, int n)
 {
 	int index = 0;
+	int i = 0;
 	int len2 = 0;
 	int dest_len = 0;
 
@@ -18,7 +19,7 @@ char *_strcat(char *dest, char *src, int n)
 	{
 		dest_len++;
 	}
-	while (src[index++])
+	while (src[i++])
 	{
 		len2++;
 	}
