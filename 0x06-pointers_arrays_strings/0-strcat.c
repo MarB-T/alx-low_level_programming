@@ -18,6 +18,7 @@ char *_strcat(char *dest, char *src)
 		src++;
 		ptr++;
 	}
+	src -= _strlen(src);
 	*ptr = '\n';
 	return (dest);
 }
