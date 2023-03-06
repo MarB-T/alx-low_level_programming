@@ -11,9 +11,21 @@
 char *_strstr(char *haystack, char *needle)
 {
 
-	int len1 = strlen(haystack), i;
-	int len2 = strlen(needle), j;
+	int len1, i;
+	int len2, j;
 
+	while (*haystack != '\0')
+	{
+		len1++;
+		haystack++
+	}
+	while (*needle != '\0')
+	{
+		len2++;
+		needle++;
+	}
+	haystack -= len1;
+	needle -= len2;
 	if (len2 == 0)
 	{
 		return (haystack);
@@ -36,22 +48,4 @@ char *_strstr(char *haystack, char *needle)
 		}
 	}
 	return (NULL);
-}
-
-/**
- * strlen - finds length of string
- * @s: the string in question
- * Return: len of s
- */
-
-int strlen(char *s)
-{
-	int len = 0;
-
-	while (*s != '\0')
-	{
-		len++;
-		s++;
-	}
-	return (len);
 }
