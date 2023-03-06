@@ -11,35 +11,47 @@
 char *_strstr(char *haystack, char *needle)
 {
 
-	int match = 1, len2 = 0;
+	int len1 = strlen(haystack), i;
+	int len2 = strlen(needle), j;
 
-	while (*haystack != '\0')
-	{
-		if (*haystack == *needle)
-		{
-			break;
-		}
-		else
-		{
-			return (NULL);
-		}
-		haystack++;
-	}
-	if (*needle == '\0')
-		return (haystack);
-	while (*(needle + len2) != '\0')
-	{
-		if (*(needle + len2) != *(haystack + len2))
-		{
-			match = 0;
-			break;
-		}
-		len2++;
-	}
-	if (match == 1)
+	if (len2 == 0)
 	{
 		return (haystack);
 	}
-	else
-		return (NULL);
+	for (i = 0; i < len1; i++)
+	{
+		if (haystack[i] == needle[0])
+		{
+			for (j = 1; j < len2 && i + j < len1; j++)
+			{
+				if (haystack[i + j] != needle[j])
+				{
+					break;
+				}
+			}
+			if (j == len2)
+			{
+				return (&haystack[i]);
+			}
+		}
+	}
+	return (NULL);
+}
+
+/**
+ * strlen - finds length of string
+ * @s: the string in question
+ * Return: len of s
+ */
+
+int strlen(char *s)
+{
+	int len = 0;
+
+	while (*s != '\0')
+	{
+		len++;
+		s++;
+	}
+	return (len);
 }
