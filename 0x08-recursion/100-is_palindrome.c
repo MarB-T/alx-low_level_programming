@@ -21,55 +21,42 @@ int _strlen_recursion(char *s)
 		return (0);
 }
 
+/**
+ * is_pal - Check if string is palindrome
+ * @s: the string in question
+ * @len: length of the string
+ * @index: the current index being checked
+ * Return: 1 if palindrome 0 if not
+ */
 
-
-int is_pal(char *s, int len)
+int is_pal(char *s, int len, int index)
 {
-	if (len >= 2)
+	if (s[index] == s[len / 2])
 	{
-                printf("first %c\n", *s);
-                printf("last %c\n", *(s + len - i));
-                if (*s != *(s + len - i))
-                {
-                        chk = 0;
-                        return (chk);
-                }
-                else if (*s == *(s + len - i))
-                {
-                        chk = 1;
-                }
-        }
-
+		return (1);
+	}
+	if (s[index] == s[len - index - 1])
+	{
+		return (is_pal(s, len, index + 1));
+	}
+	return (0);
 }
 
 
 /**
  * is_palindrome - Checks is string is palindrom
  * @s: the string in question
- * Returns: 1 if palindrome 0 if not
+ * Return: 1 if palindrome 0 if not
  */
 
 int is_palindrome(char *s)
 {
-	int len, chk = 1;
+	int len, i = 0;
 
+	if (!(*s))
+	{
+		return (1);
+	}
 	len = _strlen_recursion(s);
-	chk = is_pal(s, len);
-	return (chk);
-
-}
-
-int main(void)
-{
-    int r;
-
-    r = is_palindrome("level");
-    printf("%d\n", r);
-    r = is_palindrome("redder");
-    printf("%d\n", r);
-    r = is_palindrome("test");
-    printf("%d\n", r);
-    r = is_palindrome("step on no pets");
-    printf("%d\n", r);
-    return (0);
+	return (is_pal(s, len, i));
 }
