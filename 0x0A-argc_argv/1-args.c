@@ -12,5 +12,9 @@
 int main(int argc, char **argv)
 {
 	printf("%d\n", argc);
-	return (atoi(argv[argc]));
+	if (argv[argc] == NULL)
+	{
+	return (0);
+	}
+	return (0);
 }
