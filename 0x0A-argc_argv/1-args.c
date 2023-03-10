@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "main.h"
 
 /**
@@ -8,8 +9,8 @@
  * Return: 0 success
  */
 
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
-	printf("%d\n", argc - 1);
-	return (0);
+	printf("%d\n", argc);
+	return (atoi(argv[argc]));
 }
