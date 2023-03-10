@@ -3,9 +3,9 @@
 
 /**
  * main - prints the number of arguments passed
- * Return: 0 - success
  * @argc: argument count
  * @argv: list of arguments passed
+ * Return: 0 success
  */
 
 int main(int argc, char *argv[])
