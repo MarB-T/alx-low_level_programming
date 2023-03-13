@@ -3,7 +3,7 @@
 #include "main.h"
 
 /**
- * strlen - determines the length of string
+ * _strlen - determines the length of string
  * @s: string in questio
  * Return: length
  */
@@ -40,18 +40,26 @@ char *str_concat(char *s1, char *s2)
 	new = malloc(sizeof(char) * n);
 	if (new == NULL)
 		return (NULL);
-	for (i = 0; i < len1; i++)
-	{
-		new[i] = s1[i];
-	}
-	for(; i <= n; i++)
+	for (i = 0; i <= n; i++)
 	{
 		if (i == n)
-		{
 			new[i] = '\0';
-			return (new);
+		if (len1 == 0)
+		{
+			new[i] = s2[i];
 		}
-		new[i] = s2[i - len1];
+		if (len2 == 0)
+		{
+			new[i] = s1[i];
+		}
+		if (i < len1)
+		{
+			new[i] = s1[i];
+		}
+		if (i >= len1)
+		{
+			new[i] = s2[i - len1];
+		}
 	}
 	return (new);
 }
