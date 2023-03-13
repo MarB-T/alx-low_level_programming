@@ -23,7 +23,7 @@ int _strlen(char *s)
 /**
  * argstostr - concatenates arguments of the program
  * @ac: argument count
- * @av: argument vector 
+ * @av: argument vector
  * Return: pointer or NULL
  */
 
@@ -40,7 +40,7 @@ char *argstostr(int ac, char **av)
 	{
 		n += _strlen(av[i]);
 	}
-	size = n + ac;
+	size = n + ac - 1;
 	str = (char *)malloc(sizeof(char) * size);
 	if (str == NULL)
 	{
