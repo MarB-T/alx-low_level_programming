@@ -4,7 +4,7 @@
 #include <string.h>
 
 /**
- * string_nconcat concatenates two strings
+ * string_nconcat - concatenates two strings
  * @s1: first string
  * @s2: second string
  * @n: size of s2 to concatenate
