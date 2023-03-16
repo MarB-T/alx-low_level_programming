@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "main.h"
 #include <stdlib.h>
+#include <string.h>
 
 /**
  * _calloc - implementation of calloc
@@ -12,7 +13,7 @@
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	unsigned int i;
-	void *ptr;
+	char *ptr;
 
 	if (nmemb == 0 || size == 0)
 	{
@@ -25,7 +26,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	}
 	for (i = 0; i < nmemb; i++)
 	{
-		ptr[i] = 0;
+		ptr[i] = '0';
 	}
 	return (ptr);
 }
