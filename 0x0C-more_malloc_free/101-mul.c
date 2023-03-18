@@ -1,87 +1,94 @@
-#include <stdio.h>
 #include <stdlib.h>
+#include "main.h"
 #include <string.h>
+#include <stdio.h>
 #include <ctype.h>
 
-void print_usage();
-void print_error();
-int is_valid_number(char *num);
+/**
+ * is_number - checks if string is number
+ * num: pointer to the string
+ * Return: number (int) if valid
+ */
 
-int main(int argc, char **argv) {
-    // Check number of arguments
-    if (argc != 3) {
-        print_error();
-        return 98;
-    }
+int is_number(char *num)
+{
+	int len, i;
 
-    // Check if arguments are valid numbers
-    if (!is_valid_number(argv[1]) || !is_valid_number(argv[2])) {
-        print_error();
-        return 98;
-    }
-
-    // Convert input to numbers
-    char *num1_str = argv[1];
-    char *num2_str = argv[2];
-    int num1_len = strlen(num1_str);
-    int num2_len = strlen(num2_str);
-    int *num1 = calloc(num1_len, sizeof(int));
-    int *num2 = calloc(num2_len, sizeof(int));
-    for (int i = 0; i < num1_len; i++) {
-        num1[i] = num1_str[num1_len-i-1] - '0';
-    }
-    for (int i = 0; i < num2_len; i++) {
-        num2[i] = num2_str[num2_len-i-1] - '0';
-    }
-
-    // Multiply numbers
-    int max_len = num1_len + num2_len;
-    int *result = calloc(max_len, sizeof(int));
-    for (int i = 0; i < num1_len; i++) {
-        for (int j = 0; j < num2_len; j++) {
-            result[i+j] += num1[i] * num2[j];
-        }
-    }
-    for (int i = 0; i < max_len-1; i++) {
-        result[i+1] += result[i] / 10;
-        result[i] %= 10;
-    }
-
-    // Print result
-    int result_len = max_len;
-    while (result_len > 1 && result[result_len-1] == 0) {
-        result_len--;
-    }
-    for (int i = result_len-1; i >= 0; i--) {
-        printf("%d", result[i]);
-    }
-    printf("\n");
-
-    // Free memory
-    free(num1);
-    free(num2);
-    free(result);
-
-    return 0;
+	len = strlen(num);
+	for (i = 0; i < len; i++)
+	{
+		if(!isdigit(num[i]))
+		{
+			return (0);
+		}
+	}
+	return (1);
 }
 
-void print_usage() {
-    printf("Usage: mul num1 num2\n");
-    printf("num1 and num2 will be passed in base 10\n");
-    printf("Print the result, followed by a new line\n");
-}
+/**
+ * main - multiply two positive numbers
+ * @argc: argument count
+ * @argv: agument vector
+ * Return: 0 success
+ */
 
-void print_error() {
-    printf("Error\n");
-}
+int main(int argc, char **argv)
+{
+	int i, j, result_len, len1, len2, *num1, *num2, max_len, *result;
+	char *str1, *str2;
 
-int is_valid_number(char *num) {
-    int len = strlen(num);
-    for (int i = 0; i < len; i++) {
-        if (!isdigit(num[i])) {
-            return 0;
-        }
-    }
-    return 1;
-}
+	if (argc != 3)
+	{
+		printf("Errror\n");
+		exit(98);
+	}
+	if (!is_number(argv[1]) || !is_number(argv[2]))
+	{
+		printf("Error\n");
+		exit(98);
+	}
+	str1 = argv[1];
+	str2 = argv[2];
+	len1 = strlen(str1);
+	len2 = strlen(str2);
+	num1 = malloc(sizeof(int) * len1);
+	num2 = malloc(sizeof(int) * len2);
+	for (i = 0; i < len1; i++)
+	{
+		num1[i] = str1[len1 -i -1] - '0';
+	}
+	for (j = 0; j < len2; j++)
+	{
+		num2[j] = str2[len2 - i -1] - '0';
+	}
+	max_len = len1 + len2;
+	result = malloc(sizeof(int) * max_len);
+	for (i = 0; i < len1; i++)
+	{
+		for (j = 0; j < len2; j++)
+		{
+			result[i + j] += num1[i] * num2[j];
+		}
+	}
+	for (i = 0; i < max_len - 1; i++)
+	{
+		result[i + 1] += result[i] / 10;
+		result[i] %= 10;
+	}
+	result_len = max_len;
+	while (result_len > 1 && result[result_len - 1] == 0)
+	{
+		result_len--;
+	}
+	for (i = result_len - 1; i >= 0; i--)
+	{
+		printf("%d", result[i]);
+	}
+	printf("\n");
+	free(num1);
+	free(num2);
+	free(result);
+	return (0);
 
+
+}
