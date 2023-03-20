@@ -24,6 +24,7 @@ int _strlen(char *s)
 /**
  * copyof - copies a given string
  * @s: the string in question
+ * @saved: the saved copy
  * Return: string pointer
  */
 
