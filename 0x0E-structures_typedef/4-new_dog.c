@@ -52,22 +52,20 @@ char *copyof(char *s, char *saved)
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *dog;
-	char *saved_name;
-	char *saved_owner;
 
 	if (name == NULL || age < 0 || owner == NULL)
 		return (NULL);
-	saved_name = malloc((sizeof(char) * _strlen(name) + 1));
-	if (saved_name == NULL)
+	dog->name = malloc((sizeof(char) * _strlen(name) + 1));
+	if (dog->name == NULL)
 		return (NULL);
-	saved_owner = malloc((sizeof(char) * _strlen(owner) + 1));
-	if (saved_owner == NULL)
+	dog->owner = malloc((sizeof(char) * _strlen(owner) + 1));
+	if (dog->owner == NULL)
 		return (NULL);
 	dog = malloc(sizeof(dog_t));
 	if (dog == NULL)
 		return (NULL);
-	dog->name = copyof(name, saved_name);
+	dog->name = copyof(name, dog->name);
 	dog->age = age;
-	dog->owner = copyof(owner, saved_owner);
+	dog->owner = copyof(owner, dog->owner);
 	return (dog);
 }
