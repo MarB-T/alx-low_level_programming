@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <ctype.h>
 
+
 /**
  * is_number - checks if string is number
  * num: pointer to the string
@@ -17,7 +18,7 @@ int is_number(char *num)
 	len = strlen(num);
 	for (i = 0; i < len; i++)
 	{
-		if(!isdigit(num[i]))
+		if (!isdigit(num[i]))
 		{
 			return (0);
 		}
@@ -55,11 +56,11 @@ int main(int argc, char **argv)
 	num2 = malloc(sizeof(int) * len2);
 	for (i = 0; i < len1; i++)
 	{
-		num1[i] = str1[len1 -i -1] - '0';
+		num1[i] = str1[len1 - i - 1] - '0';
 	}
 	for (j = 0; j < len2; j++)
 	{
-		num2[j] = str2[len2 - i -1] - '0';
+		num2[j] = str2[len2 - i - 1] - '0';
 	}
 	max_len = len1 + len2;
 	result = malloc(sizeof(int) * max_len);
@@ -89,6 +90,4 @@ int main(int argc, char **argv)
 	free(num2);
 	free(result);
 	return (0);
-
-
 }
