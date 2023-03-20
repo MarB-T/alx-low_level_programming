@@ -27,20 +27,16 @@ int _strlen(char *s)
  * Return: string pointer
  */
 
-char *copyof(char *s)
+char *copyof(char *s, char *saved)
 {
 	int i;
-	char *cp;
 
-	cp = malloc((sizeof(char) * _strlen(s)) + 1);
-	if (cp == NULL)
-		return (NULL);
 	for (i = 0; s[i]; i++)
 	{
-		cp[i] = s[i];
+		saved[i] = s[i];
 	}
-	cp[i] = '\0';
-	return (cp);
+	saved[i] = '\0';
+	return (saved);
 }
 
 
@@ -55,12 +51,20 @@ char *copyof(char *s)
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *dog;
+	char *saved_name;
+	char *saved_owner;
 
+	saved_name = malloc((sizeof(char) * _strlen(name) + 1));
+	if (saved_name == NULL)
+		return (NULL);
+	saved_owner = malloc((sizeof(char) * _strlen(owner) + 1));
+	if (saved_owner == NULL)
+		return (NULL);
 	dog = malloc(sizeof(dog_t));
 	if (dog == NULL)
 		return (NULL);
-	dog->name = copyof(name);
+	dog->name = saved_name;
 	dog->age = age;
-	dog->owner = copyof(owner);
+	dog->owner = saved_owner;
 	return (dog);
 }
