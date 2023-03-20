@@ -55,6 +55,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 	char *saved_name;
 	char *saved_owner;
 
+	if (name == NULL || age < 0 || owner == NULL)
+		return (NULL);
 	saved_name = malloc((sizeof(char) * _strlen(name) + 1));
 	if (saved_name == NULL)
 		return (NULL);
