@@ -29,19 +29,19 @@ int main(int argc, char **argv)
 			}
 			else
 			{
-				printf("Error 100\n");
+				printf("Error\n");
 				exit(100);
 			}
 		}
 		else
 		{
-			printf("Error 99\n");
+			printf("Error\n");
 			exit(99);
 		}
 	}
 	else
 	{
-		printf("Error 98\n");
+		printf("Error\n");
 		exit(98);
 	}
 	return (0);
