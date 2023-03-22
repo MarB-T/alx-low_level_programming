@@ -18,7 +18,7 @@ int main(int argc, char **argv)
 
 	if (argc == 4)
 	{
-		if (strchr(op, (int)p) != NULL)
+		if ((strchr(op, (int)p) != NULL) && argv[2][1] == '\0')
 		{
 			if (!((p == '/' || p == '%') && *argv[3] == '0'))
 			{
