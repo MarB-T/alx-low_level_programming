@@ -12,7 +12,7 @@ void print_strings(const char *separator, unsigned int n, ...)
 {
 	unsigned int i;
 	va_list strings;
-	char *str, *nil = "nil";
+	char *str, *nil = "(nil)";
 
 	va_start(strings, n);
 	for (i = 0; i < n; i++)
