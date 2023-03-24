@@ -2,7 +2,7 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include "variadic_functions.h"
-#include "variadic_functons.c"
+#include "variadic_functions.c"
 
 /**
  * print_all - print everything
