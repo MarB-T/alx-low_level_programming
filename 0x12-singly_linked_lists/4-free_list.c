@@ -1,6 +1,5 @@
 #include "lists.h"
 
-void free_node(list_t *node);
 
 /**
  * free_list - frees a list
@@ -10,32 +9,13 @@ void free_node(list_t *node);
 
 void free_list(list_t *head)
 {
-	list_t *n;
+	list_t *temp;
 
-	if (head->next == NULL)
+	while (head != NULL)
 	{
-		free_node(head);
+		temp = head;
+		head = head->next;
+		free(temp->str);
+		free(temp);
 	}
-	else
-	{
-		n = head->next;
-		free_node(head);
-		while (n->next != NULL)
-		{
-			n = n->next;
-			free_node(n);
-		}
-	}
-}
-
-/**
- * free_node - frees a node
- * @node: pointer to node
- * Return: nothing
- */
-
-void free_node(list_t *node)
-{
-	free(node->str);
-	free(node);
 }
