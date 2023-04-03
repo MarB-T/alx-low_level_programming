@@ -8,8 +8,6 @@
 
 void free_node(listint_t *n)
 {
-	free(n->n);
-	free(n->next);
 	free(n);
 }
 
