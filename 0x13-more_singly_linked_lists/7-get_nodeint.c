@@ -38,7 +38,7 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 	if ((size_t)index > len)
 	{
 		printf("Index bigger than list size\n");
-		exit (-1);
+		exit(-1);
 	}
 	if (head == NULL)
 		return (NULL);
@@ -53,5 +53,7 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 		}
 		nth_node = head;
 	}
+	if (nth_node == NULL)
+		return (NULL);
 	return (nth_node);
 }
