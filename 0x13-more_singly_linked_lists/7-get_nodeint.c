@@ -35,10 +35,9 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 	size_t len = listint_len(head);
 	unsigned int count = 0;
 
-	if ((size_t)index > len)
+	if (index > len)
 	{
-		printf("Index bigger than list size\n");
-		exit(-1);
+		return (NULL);
 	}
 	if (head == NULL)
 		return (NULL);
