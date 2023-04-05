@@ -10,7 +10,7 @@ size_t _looped(const listint_t *head)
 	const listint_t *temp1, *temp2;
 	size_t nodes = 1;
 
-	if(head == NULL || head->next == NULL)
+	if (head == NULL || head->next == NULL)
 		return (0);
 
 	temp1 = head->next;
