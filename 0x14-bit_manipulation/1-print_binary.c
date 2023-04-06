@@ -22,8 +22,8 @@ void print_binary(unsigned long int n)
 	for (i = i; i >= 0; i--)
 	{
 		bit = (n >> i) & 1;
-		printf("%d", bit);
+		_putchar(bit + '0');
 	}
 	if (!flag)
-		printf("0");
+		_putchar('0');
 }
