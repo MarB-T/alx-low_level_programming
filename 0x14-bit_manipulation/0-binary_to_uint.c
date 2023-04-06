@@ -1,24 +1,6 @@
 #include "main.h"
 
 /**
- * power - calculates exponential
- * @base: base
- * @power: raised
- * Return: (base raised to power)
- */
-
-int power(int base, int power)
-{
-	int res = 1, i;
-
-	for (i = power; i > 0; i--)
-	{
-		res = res  * base;
-	}
-	return (res);
-}
-
-/**
  * binary_to_uint - Converts binary to unsigned int
  * @b: string of 1 and 0
  * Return: converted number or 0
@@ -26,20 +8,20 @@ int power(int base, int power)
 
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int converted = 0, i, len = strlen(b);
+	unsigned int converted = 0;
 
-	if (b == NULL || len == 0)
+	if (b == NULL)
 		return (0);
-	for (i = 0; i < len; i++)
+
+	while (*b)
 	{
-		if (b[i] != '1' && b[i] != '0')
-		{
+		if (*b == '1')
+			converted = (converted << 1) | 1;
+		else if (*b == '0')
+			converted <<= 1;
+		else
 			return (0);
-		}
-		if (b[i] == '1')
-		{
-			converted += power(2, (len - 1 - i));
-		}
+		b++;
 	}
 	return (converted);
 }

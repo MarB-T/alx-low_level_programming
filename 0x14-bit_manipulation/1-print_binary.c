@@ -8,22 +8,20 @@
 
 void print_binary(unsigned long int n)
 {
-	int i, bit, flag = 0;
+	int bit;
+	static int c;
 
-	for (i = 31; i >= 0; i--)
+	if (n == 0 && c > 0)
 	{
-		bit = (n >> i) & 1;
-		if (bit == 1)
-		{
-			flag = 1;
-			break;
-		}
+		return;
 	}
-	for (i = i; i >= 0; i--)
+	else if (n == 0)
 	{
-		bit = (n >> i) & 1;
-		_putchar(bit + '0');
-	}
-	if (!flag)
 		_putchar('0');
+		return;
+	}
+	bit = (n & 1);
+	c++;
+	print_binary(n >>= 1);
+	_putchar(bit + '0');
 }
