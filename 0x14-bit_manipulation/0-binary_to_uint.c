@@ -27,21 +27,20 @@ int power(int base, int power)
 unsigned int binary_to_uint(const char *b)
 {
 	unsigned int converted = 0;
-	int len = strlen(b), i, j = 0;
+	int len = strlen(b), i;
 
-	if (b == NULL)
+	if (b == NULL || len == 0)
 		return (0);
-	for (i = len - 1; i >= 0; i--)
+	for (i = 0; i < len; i++)
 	{
-		if (!(b[i] == '1' || b[i] == '0'))
+		if (b[i] != '1' && b[i] != '0')
 		{
 			return (0);
 		}
 		if (b[i] == '1')
 		{
-			converted += power(2, j);
+			converted += power(2, (len - 1 -i));
 		}
-		j++;
 	}
 	return (converted);
 }
