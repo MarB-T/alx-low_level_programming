@@ -26,8 +26,7 @@ int power(int base, int power)
 
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int converted = 0;
-	int len = strlen(b), i;
+	unsigned int converted = 0, i, len = strlen(b);
 
 	if (b == NULL || len == 0)
 		return (0);
@@ -39,7 +38,7 @@ unsigned int binary_to_uint(const char *b)
 		}
 		if (b[i] == '1')
 		{
-			converted += power(2, (len - 1 -i));
+			converted += power(2, (len - 1 - i));
 		}
 	}
 	return (converted);
