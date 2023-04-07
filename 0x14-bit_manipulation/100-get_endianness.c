@@ -5,7 +5,7 @@
  * Return: 0-big endian, 1-litle endian
  */
 
-int get_endianness()
+int get_endianness(void)
 {
 	unsigned int b = 15;
 	char *first = (char *)&b;
