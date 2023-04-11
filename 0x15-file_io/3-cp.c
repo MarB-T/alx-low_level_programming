@@ -60,8 +60,7 @@ int main(int argc, char **argv)
 	old = open(argv[1], O_RDONLY);
 	r = read(old, b, 1024);
 	new = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
-	if (r)
-	{
+	do {
 		w = write(new, b, r);
 		if (old == -1 || r == -1)
 		{
@@ -79,7 +78,7 @@ int main(int argc, char **argv)
 		}
 		r = read(old, b, 1024);
 		new = open(argv[2], O_WRONLY | O_APPEND);
-	}
+	} while (r > 0);
 	free(b);
 	close_file(new);
 	close_file(old);
