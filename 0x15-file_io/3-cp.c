@@ -74,6 +74,7 @@ int main(int argc, char **argv)
 		{
 			dprintf(STDERR_FILENO,
 					"Error: Encountered an error while writing to file %s\n", argv[2]);
+			free(b);
 			exit(99);
 		}
 		r = read(old, b, 1024);
