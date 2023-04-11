@@ -73,7 +73,7 @@ int main(int argc, char **argv)
 		return (0);
 	old = open(argv[1], O_RDONLY);
 	error_98(old, b, argv[1]);
-	new = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	new = open(argv[2], O_WRONLY | O_TRUNC | O_CREAT, 0664);
 	error_99(new, b, argv[2]);
 	do {
 		r = read(old, b, 1024);
