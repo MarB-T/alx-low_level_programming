@@ -14,7 +14,7 @@ void close_file(int f)
 	if (closed == -1)
 	{
 		dprintf(STDERR_FILENO,
-				"Error: Failed to close file descriptor %d\n", f);
+				"Error: Failed to close file descriptor %d", f);
 		exit(100);
 	}
 }
