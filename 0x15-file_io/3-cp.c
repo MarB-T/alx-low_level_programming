@@ -65,7 +65,7 @@ int main(int argc, char **argv)
 
 	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO, "Syntax: copy <source_file> <destination_file>");
+		dprintf(STDERR_FILENO, "Syntax: copy <source_file> <destination_file>\n");
 		exit(97);
 	}
 	b = malloc(sizeof(char) * 1024);
