@@ -19,7 +19,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	if (!new)
 		return (NULL);
 	current = *h;
-	while (1)
+	while (current)
 	{
 		if (idx == count)
 		{
