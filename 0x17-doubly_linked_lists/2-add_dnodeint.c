@@ -3,6 +3,7 @@
 /**
  * add_dnodeint - add node to the beginning of node
  * @head: pointer to node head
+ * @n: node data
  * Return: address of new node
  */
 
