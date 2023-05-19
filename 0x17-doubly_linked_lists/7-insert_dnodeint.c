@@ -8,7 +8,7 @@
  * Return: address of new node
  */
 
-dlistint_t *insert_dnode_at_index(dlistint_t **h, unsigned int idx, int n)
+dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
 	unsigned int count = 0;
 	dlistint_t *new, *current, *prevv;
