@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * size_t print_dlistint - prints contents of a doubly linked list
+ * print_dlistint - prints contents of a doubly linked list
  * @h: head of the list in question
  * Return: number of elements in list (size_t)
  */
