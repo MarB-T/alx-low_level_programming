@@ -4,7 +4,7 @@
  * key_index - function that returns the index of a key in a hashtable
  * @key: pointer to the key
  * @size: size of the array of the hash table
- *
+ * Return: unique index
  *
  */
 
