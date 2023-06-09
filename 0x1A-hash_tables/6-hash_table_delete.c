@@ -17,7 +17,7 @@ void hash_table_delete(hash_table_t *ht)
 		{
 			temp = bucket;
 			bucket = bucket->next;
-			if (temp->value)	
+			if (temp->value)
 				free(temp->value);
 			if (temp->key)
 				free(temp->key);
