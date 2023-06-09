@@ -10,7 +10,7 @@
 
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *new;
+	hash_node_t *new, *bucket;
 	unsigned long int idx;
 	char *val, *k;
 
@@ -35,16 +35,17 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		ht->array[idx] = new;
 		return (1);
 	}
-	while (ht->array[idx]->next != NULL)
+	bucket = ht->array[idx];
+	while (bucket->next != NULL)
 	{
-		if (strcmp(ht->array[idx]->key, key) == 0)
+		if (strcmp(bucket->key, key) == 0)
 		{
-			free(ht->array[idx]->value);
-			ht->array[idx]->value = val;
+			free(bucket->value);
+			bucket->value = val;
 			free(new);
 			return (1);
 		}
-		ht->array[idx]->next = ht->array[idx]->next->next;
+		bucket = bucket->next;
 	}
 	new->next = ht->array[idx];
 	ht->array[idx] = new;
