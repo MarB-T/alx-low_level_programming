@@ -108,9 +108,9 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
 
 
 /**
- * sorted_list - function for insert new node in sorted
+ * insert_sorted - function for insert new node in sorted
  * @ht: pointer to sorted hash table
- * @new_node: pew node to insert
+ * @new: pew node to insert
  * Return: nothing
  */
 void insert_sorted(shash_table_t *ht, shash_node_t *new)
