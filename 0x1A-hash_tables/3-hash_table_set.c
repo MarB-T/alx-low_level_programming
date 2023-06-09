@@ -35,22 +35,18 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		ht->array[idx] = new;
 		return (1);
 	}
-	else
+	while (ht->array[idx]->next != NULL)
 	{
-		while (ht->array[idx]->next != NULL)
+		if (strcmp(ht->array[idx]->key, key) == 0)
 		{
-			if (strcmp(ht->array[idx]->key, key) == 0)
-			{
-				free(ht->array[idx]->value);
-				ht->array[idx]->value = val;
-				free(new);
-				return (1);
-			}
-			ht->array[idx]->next = ht->array[idx]->next->next;
+			free(ht->array[idx]->value);
+			ht->array[idx]->value = val;
+			free(new);
+			return (1);
 		}
-		new->next = ht->array[idx];
-		ht->array[idx] = new;
-		return (1);
+		ht->array[idx]->next = ht->array[idx]->next->next;
 	}
-	return (0);
+	new->next = ht->array[idx];
+	ht->array[idx] = new;
+	return (1);
 }
