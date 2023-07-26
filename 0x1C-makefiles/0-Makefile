@@ -1,0 +1,5 @@
+all: school
+
+school: main.c utils.c
+	gcc -o school main.c utils.c
+
