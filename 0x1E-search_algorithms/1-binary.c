@@ -11,7 +11,7 @@ void print_array(int *array, size_t siz)
 	size_t i  = 0;
 
 	printf("Searching in array: ");
-	for (i = 0; i <= siz; i++)
+	for (i = 0; i < siz; i++)
 	{
 		printf("%d", array[i]);
 		if (i < siz - 1)
@@ -30,26 +30,36 @@ void print_array(int *array, size_t siz)
  */
 int binary_search(int *array, size_t size, int value)
 {
-	size_t siz = size / 2;
-	int result;
+	size_t left = 0, i;
+	size_t right = size - 1;
 
-	if (array == NULL || size == 0)
-		return (-1);
-	if (value == array[siz])
+	while (left <= right)
 	{
-		print_array(array, siz);
-		printf("Found %d at index %ld\n", value, size);
-		return (siz);
+		size_t mid = left + (right - left) / 2;
+
+		printf("Searching in array: ");
+		for (i = left; i <= right; i++)
+		{
+			printf("%d", array[i]);
+			if (i < right)
+				printf(", ");
+		}
+		printf("\n");
+
+		if (array[mid] == value)
+		{
+			printf("Found %d at index %lu\n", value, mid);
+			return (mid);
+		}
+		else if (array[mid] < value)
+		{
+			left = mid + 1;
+		}
+		else
+		{
+			right = mid - 1;
+		}
 	}
-	else if (value > array[siz])
-	{
-		result = binary_search(array + size + 1, size - siz - 1, value);
-		if (result != -1)
-			return (siz + result + 1);
-	}
-	else
-	{
-		return (binary_search(array, siz, value));
-	}
+
 	return (-1);
 }
